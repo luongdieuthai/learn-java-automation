@@ -46,7 +46,6 @@ public class conditionsCollectionsJunit {
                         { "TC3", "val5", "val6" }
             };
             String keywordExpresion = "\\$\\{\\_\\w+\\[(\\d+)\\]\\[(\\d+)\\]\\}";
-            // contextString = String.format("${_onTestCaseData.[%d].[%d]}", 1, 2);
             
             Pattern pattern = Pattern.compile(keywordExpresion);
             Matcher matcher = pattern.matcher(keyword);
