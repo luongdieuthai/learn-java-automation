@@ -4,9 +4,6 @@ import org.junit.*;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.management.ManagementFactory;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -14,30 +11,6 @@ import java.util.regex.Pattern;
  * Unit test for simple App.
  */
 public class conditionsCollectionsJunit {
-      /**
-       * Java Conditions Test :-)
-       */
-      private String contextString = "";
-      private commonCollectionMethods colMed;
-
-      public conditionsCollectionsJunit() {
-            super();
-            contextString = "${_onTestCaseData.[i].[j]}";
-            colMed = new common();
-      }
-
-      @Before
-      public void start_testing() {
-            System.out.println("start_testing " + ManagementFactory.getRuntimeMXBean().getName());
-      }
-
-      @Test
-      // create hashmap
-      public void checkMap() {
-            // Map<String, String> map = new HashMap<String, String>();
-
-      }
-      
       public static String dataLoader(String keyword) {
             // create multi dimensional array
             String[][] dataSet = new String[][] {
