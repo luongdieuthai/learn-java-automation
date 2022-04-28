@@ -109,32 +109,60 @@ public class dataLoader {
                   return keyword;
             }
             int row = Integer.parseInt(matcher.group(1));
-
+            if(row>=dataSet.length) {
+                  return keyword;
+            }
             return dataSet[row];
       }
       @Test
       public void testDataLoaderArray1() {
             String value = dataLoader.dataLoaderArray("${getDatadsf}");
             Assert.assertEquals("${getDatadsf}", value);
-            System.out.println(value);
       }
       @Test
       public void testDataLoaderArray2() {
             String value = dataLoader.dataLoaderArray("${_getData[2]}");
             Assert.assertEquals("val2", value);
-            System.out.println(value);
       }
       @Test
       public void testDataLoaderArray3() {
             String value = dataLoader.dataLoaderArray("${getData[1]}");
             Assert.assertEquals("${getData[1]}", value);
-            System.out.println(value);
       }
       @Test
       public void testDataLoaderArray4() {
             String value = dataLoader.dataLoaderArray("${_getDatadsf[2]}");
             Assert.assertEquals("val2", value);
-            System.out.println(value);
+      }
+      @Test
+      public void testDataLoaderArray5() {
+            String value = dataLoader.dataLoaderArray("${_getData[1c]}");
+            Assert.assertEquals("${_getData[1c]}", value);
+      }
+      @Test
+      public void testDataLoaderArray6() {
+            String value = dataLoader.dataLoaderArray("${_getDatadsf[2@]}");
+            Assert.assertEquals("${_getDatadsf[2@]}", value);
+      }
+      @Test
+      public void testDataLoaderArray7() {
+            String value = dataLoader.dataLoaderArray("${_getData![1]}");
+            Assert.assertEquals("${_getData![1]}", value);
+      }
+      @Test
+      public void testDataLoaderArray8() {
+            String value = dataLoader.dataLoaderArray("${_getDatadsf[4]}");
+            Assert.assertEquals("${_getDatadsf[4]}", value);
+      }
+      @Test
+      public void testDataLoaderArray9() {
+            String value = dataLoader.dataLoaderArray("${_getDatadsf[02]}");
+            Assert.assertEquals("val2", value);
+      }
+      @Test
+      public void testDataLoaderArray10() {
+            String value = dataLoader.dataLoaderArray("${_getDatadsf[-2]}");
+            Assert.assertEquals("${_getDatadsf[-2]}", value);
       }
       @AfterClass
       public static void end_testing() {
